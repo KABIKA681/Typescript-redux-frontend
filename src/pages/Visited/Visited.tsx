@@ -3,7 +3,7 @@ import React from 'react'
 const Visited = () => {
     return (
         <div>
-            To visit Page
+            visited Page
         </div>
     )
 }
