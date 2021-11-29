@@ -1,8 +1,8 @@
-import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE} from "../../types"
+import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE, FetchAllCountriesAction} from "../../types"
 
 //fetch all countries
 
-export function fetchAllCountries():CountryActions {
+export function fetchAllCountries():FetchAllCountriesAction {
     
     return {
         type:FETCH_COUNTRIES
