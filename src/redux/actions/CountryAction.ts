@@ -1,8 +1,8 @@
-import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE, FetchAllCountriesAction} from "../../types"
+import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE} from "../../types"
 
 //fetch all countries
 
-export function fetchAllCountries():FetchAllCountriesAction {
+export function fetchAllCountries():CountryActions {
     
     return {
         type:FETCH_COUNTRIES
@@ -10,7 +10,7 @@ export function fetchAllCountries():FetchAllCountriesAction {
 }
 
 // fetch all countries success
-export function FetchAllCountriesSuccess(countries:[]):CountryActions {
+export function fetchAllCountriesSuccess(countries:[]):CountryActions {
     
     return {
         type: FETCH_COUNTRIES_SUCCESS,
@@ -18,8 +18,8 @@ export function FetchAllCountriesSuccess(countries:[]):CountryActions {
     }
 }
 
-// fetch all countries success
-export function FetchAllCountriesFailure(error:string):CountryActions {
+// fetch all countries failure
+export function fetchAllCountriesFailure(error:string):CountryActions {
     
     return {
         type: FETCH_COUNTRIES_FAILURE,

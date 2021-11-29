@@ -1,8 +1,9 @@
 import { CountryReducerState } from './CountryTypes'
+
+
 export * from './CountryTypes'
 
-
-//global App state 
+//global App State
 
 export type AppState = {
     countryReducer: CountryReducerState

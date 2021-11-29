@@ -2,10 +2,10 @@ import {combineReducers} from 'redux'
 
 import countryReducer from './CountryReducer'
 
-const rootReducer = () => {
+const rootReducer = () => 
     combineReducers({
         countryReducer
     })
-}
+
 
 export default rootReducer

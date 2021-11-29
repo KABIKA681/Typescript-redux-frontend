@@ -15,12 +15,12 @@ export type FetchAllCountriesAction = {
     type: typeof FETCH_COUNTRIES
     payload?: string
 }
-export type FetchAllCountriesSuccessAction = {
+export type FetchAllCountriesSuccessAction= {
     type: typeof FETCH_COUNTRIES_SUCCESS
-    payload?: []
+    payload: []
 }
 export type FetchAllCountriesFailureAction = {
     type: typeof FETCH_COUNTRIES_FAILURE
-    payload?: string
+    payload: string
 }
 export type CountryActions = FetchAllCountriesAction | FetchAllCountriesSuccessAction | FetchAllCountriesFailureAction
