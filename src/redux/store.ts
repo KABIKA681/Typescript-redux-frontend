@@ -1,19 +1,13 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
-import rootReducer from './reducers/index'
+import rootReducer from './reducers'
 
 const initState = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    country: '',
-    dateOfBirth: '',
-    loginDate: '' 
+    
 }
 
-// console.log(initState);
+
 
 export default function makeStore( initialState = initState) {
      
@@ -28,7 +22,7 @@ export default function makeStore( initialState = initState) {
     }
 
     // create redux store
-    const store = createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(...middlewares)))
+    const store = createStore(rootReducer(), initialState, composeEnhancers(applyMiddleware(...middlewares)) )
     
     if ((module as any).hot) {
         ; (module as any).hot.accept('./reducers', () => {

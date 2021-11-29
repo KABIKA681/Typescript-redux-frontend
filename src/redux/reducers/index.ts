@@ -1,19 +1,11 @@
+import {combineReducers} from 'redux'
 
-const initialState = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    country: '',
-    dateOfBirth: '',
-    loginDate: '' 
+import countryReducer from './CountryReducer'
+
+const rootReducer = () => {
+    combineReducers({
+        countryReducer
+    })
 }
 
-console.log(initialState)
-
-export default function rootReducer(state = initialState, action: any) {
-    switch (action.type) {
-        default: 
-            return state 
-    }
-}
+export default rootReducer
