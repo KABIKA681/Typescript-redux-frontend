@@ -2,19 +2,21 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Topbar from "./Topbar";
+
+
+
+
 export default function Sidebar() {
     const [show, setShow] = useState(false);
 
-
     return (
         <>
-            <Topbar />
+            
             <div className="w-full h-full bg-white">
                 <div className="flex flex-no-wrap">
                     {/* Sidebar starts */}
-                    <div className="absolute lg:relative w-60 h-screen shadow bg-white hidden lg:block -mt-24" >
-                        <div className="h-16 w-full flex items-center px-8">
+                    <div className="absolute lg:relative w-60 h-screen shadow bg-white hidden lg:block -mt-40" >
+                        <div className="h-16 w-full flex items-center px-8 pt-10" >
 
                             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                 width="60.000000pt" height="688.000000pt" viewBox="0 0 2408.000000 988.000000"

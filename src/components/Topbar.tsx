@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props */
 
 import React, { useState } from "react";
+import RoutesPage from "../Routes";
 export default function Topbar() {
     const [show, setShow] = useState(false);
     const [profile, setProfile] = useState(false);
@@ -12,7 +13,9 @@ export default function Topbar() {
                 <nav className="h-16 flex items-center lg:items-stretch justify-end lg:justify-between bg-white  relative z-10" >
                     <div className="hidden lg:flex w-full pr-6">
                         <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24">
-                            <p className="p-2 mt-4">MY LIST</p>
+                        
+                        <RoutesPage/>
+
                         </div>
                         <div className="w-1/2 hidden lg:flex mt-10">
 
@@ -100,10 +103,10 @@ export default function Topbar() {
                     </div>
                 </nav>
                 <div className=" bg-white">
-                    <div className="w-full h-full bg-white">
+                    <div className="w-full h-full bg-white flex ">
                         <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24">
-                            <div className="relative w-full mt-2">
-                                <div className="text-gray-500 absolute ml-4 inset-0 m-auto w-4 h-4">
+                            <div className="relative w-1/2 mt-2 p-5">
+                                <div className="text-gray-500 absolute ml-10 inset-0 m-auto w-4 h-4">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width={16} height={16} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" />
                                         <circle cx={10} cy={10} r={7} />
@@ -111,10 +114,24 @@ export default function Topbar() {
                                     </svg>
                                 </div>
                                 <input className="border border-gray-100 focus:outline-none focus:border-red-400 rounded w-full text-sm text-gray-500 bg-gray-100 pl-12 py-2" type="text" placeholder="Search for a country" />
+                            </div>  
+                        </div>
+                        <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24 ">
+                            <div className="relative ml-40 p-5" >
+                                <div className="text-gray-500 absolute ml-10 inset-0 m-auto w-4 h-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-search" width={16} height={16} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" />
+                                        <circle cx={10} cy={10} r={7} />
+                                        <line x1={21} y1={21} x2={15} y2={15} />
+                                    </svg>
+                                </div>
+                                <input className="border border-gray-100 focus:outline-none focus:border-red-400 rounded w-full text-sm text-gray-500 bg-gray-100 pl-12 py-2" type="text" placeholder="Filter by region" />
                             </div>
+                            
                         </div>
                     </div>
                 </div>
+                
 
             </div>
 
