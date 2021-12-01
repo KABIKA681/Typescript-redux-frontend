@@ -36,7 +36,10 @@ export function fetchCountries() {
         //axios calls
         axios.get('https://restcountries.com/v3.1/all')
             .then((res) => {
-            
+                const countries = res.data
+                dispatch(fetchAllCountriesSuccess(countries))
+            }).catch((error) => {
+            dispatch(fetchAllCountriesFailure(error))
         })
     }
 }

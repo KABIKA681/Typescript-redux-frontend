@@ -3,6 +3,7 @@ import Sidebar from './components/Sidebar';
 import { createTheme } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import Topbar from './components/Topbar';
+import RoutesPage from './Routes';
 
 //create MATERIAL UI theme
 const theme = createTheme({
@@ -37,10 +38,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <>
-
         <div className='App'>
           <Topbar />
           <Sidebar />
+
         </div>
       </>
     </ThemeProvider >
