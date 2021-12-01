@@ -1,5 +1,5 @@
-
-
+import {Dispatch} from 'redux'
+import axios from 'axios'
 
 import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE } from "../../types"
 
@@ -29,3 +29,6 @@ export function fetchAllCountriesFailure(error:string):CountryActions {
         payload: error
     }
 }
+
+//FETCH COUNTRIES DATA 
+export function fetch

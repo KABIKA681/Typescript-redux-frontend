@@ -1,5 +1,5 @@
 //reducer case constants
-export const FETCH_COUNTRIES = 'FETCH_COUNTRIES'
+export const FETCH_COUNTRIES_LOADING = 'FETCH_COUNTRIES_LOADING'
 export const FETCH_COUNTRIES_SUCCESS='FETCH_COUNTRIES_SUCCESS'
 export const FETCH_COUNTRIES_FAILURE = 'FETCH_COUNTRIES_FAILURE'
 
@@ -11,8 +11,8 @@ export type CountryReducerState = {
 }
 
 // action types
-export type FetchAllCountriesAction = {
-    type: typeof FETCH_COUNTRIES
+export type FetchAllCountriesLoadingAction = {
+    type: typeof FETCH_COUNTRIES_LOADING
     payload?: string
 }
 export type FetchAllCountriesSuccessAction= {
@@ -23,4 +23,4 @@ export type FetchAllCountriesFailureAction = {
     type: typeof FETCH_COUNTRIES_FAILURE
     payload: string
 }
-export type CountryActions = FetchAllCountriesAction | FetchAllCountriesSuccessAction | FetchAllCountriesFailureAction
+export type CountryActions = FetchAllCountriesLoadingAction | FetchAllCountriesSuccessAction | FetchAllCountriesFailureAction
