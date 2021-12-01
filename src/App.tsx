@@ -37,10 +37,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <>
-       
+
         <div className='App'>
-         <Topbar />
-        <Sidebar />
+          <Topbar />
+          <Sidebar />
         </div>
       </>
     </ThemeProvider >

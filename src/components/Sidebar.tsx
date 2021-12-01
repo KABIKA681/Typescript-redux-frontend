@@ -13,7 +13,7 @@ export default function Sidebar() {
         <>
 
             <div className="w-full h-full bg-white">
-                <div className="flex flex-no-wrap">
+                <div className="flex flex-wrap">
                     {/* Sidebar starts */}
                     <div className="absolute lg:relative w-60 h-screen shadow bg-white hidden lg:block -mt-40" >
                         <div className="h-16 w-full flex items-center px-8 pt-10" >
@@ -232,9 +232,21 @@ export default function Sidebar() {
                     {/*Mobile responsive sidebar*/}
                     {/* Sidebar ends */}
 
-                    <div style={{ padding: 40}} className="flex">
-                        <CountryCard />
-                        
+                    <div className="p-10 flex flex-wrap justify-evenly">
+                        <div className="mr-14">
+                            <CountryCard />
+                        </div>
+                        <div className="mr-14">
+                            <CountryCard />
+                        </div>
+                        <div className="mr-14">
+                            <CountryCard />
+                        </div>
+                        <div>
+                            <CountryCard />
+                        </div>
+
+
                     </div>
                 </div>
 

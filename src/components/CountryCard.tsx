@@ -12,6 +12,7 @@ import image from '../asset/pexels-karolina-grabowska-4386346.jpg'
 const useStyles = makeStyles({
     root: {
         maxWidth: 345,
+        maxHeight:450,
         color: "black",
         background: "#F2F2F2"
     },
