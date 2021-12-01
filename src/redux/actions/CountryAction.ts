@@ -1,14 +1,14 @@
 import {Dispatch} from 'redux'
 import axios from 'axios'
 
-import { FETCH_COUNTRIES, FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE } from "../../types"
+import { FETCH_COUNTRIES_LOADING, FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE } from "../../types"
 
 //fetch all countries
 
-export function fetchAllCountries():CountryActions {
+export function fetchAllCountriesLoading():CountryActions {
     
     return {
-        type:FETCH_COUNTRIES
+        type:FETCH_COUNTRIES_LOADING
     } 
 }
 
@@ -31,4 +31,12 @@ export function fetchAllCountriesFailure(error:string):CountryActions {
 }
 
 //FETCH COUNTRIES DATA 
-export function fetch
+export function fetchCountries() {
+    return (dispatch: Dispatch) => {
+        //axios calls
+        axios.get('https://restcountries.com/v3.1/all')
+            .then((res) => {
+            
+        })
+    }
+}
