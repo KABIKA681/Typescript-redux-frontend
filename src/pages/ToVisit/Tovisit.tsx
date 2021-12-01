@@ -1,10 +1,11 @@
 import React from 'react'
 
+
 const Tovisit = () => {
     return (
-        <div>
-            To visit Page
-        </div>
+        <>
+           To visit    
+        </>
     )
 }
 

@@ -1,10 +1,12 @@
 import React from 'react'
+import Sidebar from '../../components/Sidebar'
+import Topbar from '../../components/Topbar'
 
-const  SingleCountryPage = () => {
+const SingleCountryPage = () => {
     return (
-        <div>
-            This is SingleCountryPage
-        </div>
+        <>
+            SinglePage
+        </>
     )
 }
 

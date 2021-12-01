@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import CountryCard from "./CountryCard";
+import Topbar from "./Topbar";
 
 
 export default function Sidebar() {
@@ -9,7 +11,7 @@ export default function Sidebar() {
 
     return (
         <>
-            
+
             <div className="w-full h-full bg-white">
                 <div className="flex flex-no-wrap">
                     {/* Sidebar starts */}
@@ -225,14 +227,17 @@ export default function Sidebar() {
 
                             </div>
                         </div>
+
                     </div>
                     {/*Mobile responsive sidebar*/}
                     {/* Sidebar ends */}
 
-
-
-
+                    <div style={{ padding: 40}} className="flex">
+                        <CountryCard />
+                        
+                    </div>
                 </div>
+
             </div>
         </>
     );

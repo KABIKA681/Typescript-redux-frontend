@@ -7,7 +7,7 @@ import FilterRegion from "./FilterRegion"
 export default function Topbar() {
     const [show, setShow] = useState(false);
     const [profile, setProfile] = useState(false);
- 
+
 
     return (
         <>
@@ -15,8 +15,8 @@ export default function Topbar() {
                 <nav className="h-16 flex items-center lg:items-stretch justify-end lg:justify-between bg-white  relative z-10" >
                     <div className="hidden lg:flex w-full pr-6">
                         <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24">
-                        
-                        <RoutesPage/>
+
+                            <RoutesPage />
 
                         </div>
                         <div className="w-1/2 hidden lg:flex mt-10">
@@ -41,15 +41,9 @@ export default function Topbar() {
                                         <div className="w-2 h-2 rounded-full bg-red-400 absolute inset-0 mt-1 mr-1 m-auto" />
                                     </div>
                                 </div>
-                                <div className="h-full w-20 flex items-center justify-center border-r mr-4 cursor-pointer text-gray-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-messages" width={28} height={28} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
-                                        <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
-                                    </svg>
-                                </div>
-                                <div className="flex items-center relative cursor-pointer" onClick={() => setProfile(!profile)}>
-                                    <p className="text-gray-800 text-sm mx-3">J. Harden</p>
+
+                                <div className="flex items-center relative cursor-pointer mr-10" onClick={() => setProfile(!profile)}>
+                                    <p className="text-gray-800 text-sm mx-3 ">J. Harden</p>
                                     <div className="rounded-full">
                                         {profile ? (
                                             <ul className="p-2 w-full border-r bg-white absolute rounded left-0  mt-12 sm:mt-16 ">
@@ -82,12 +76,7 @@ export default function Topbar() {
                                             <div className="w-2 h-2 rounded-full bg-red-400 border border-white absolute inset-0 mb-0 mr-0 m-auto" />
                                         </div>
                                     </div>
-                                    <div className="cursor-pointer text-gray-600">
-                                        <svg aria-haspopup="true" xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chevron-down" width={20} height={20} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" />
-                                            <polyline points="6 9 12 15 18 9" />
-                                        </svg>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -116,14 +105,16 @@ export default function Topbar() {
                                     </svg>
                                 </div>
                                 <input className="border border-gray-100 focus:outline-none focus:border-red-400 rounded w-full text-sm text-gray-500 bg-gray-100 pl-12 py-2" type="text" placeholder="Search for a country" />
-                            </div>  
+                            </div>
+
                         </div>
+
                         <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24 ">
-                            <FilterRegion/>
+                            <FilterRegion />
                         </div>
                     </div>
                 </div>
-                
+
 
             </div>
 

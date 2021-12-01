@@ -1,9 +1,12 @@
 import React from 'react'
 
+
 const Home = () => {
+
     return (
         <>
-            MY LIST
+            <div>MY LIST</div>
+
         </>
     )
 }

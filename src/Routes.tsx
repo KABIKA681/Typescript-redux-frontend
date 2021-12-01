@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom'
+import Sidebar from "./components/Sidebar";
+
 
 import Home from "./pages/Home/Home";
 import SingleCountryPage from "./pages/SingleCountryPage/SingleCountry";
@@ -12,7 +14,7 @@ const RoutesPage = () => (
     <Routes>
         {/*We will render all our components here */}
         <>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home/>} />
             <Route path="/singlepage" element={<SingleCountryPage />} />
             <Route path="/tovisit" element={<Tovisit />} />
             <Route path="/visited" element={<Visited />} />
