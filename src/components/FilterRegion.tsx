@@ -4,7 +4,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { fontFamily } from '@mui/system';
 
 
 export default function FilterRegion() {
@@ -19,12 +18,12 @@ export default function FilterRegion() {
             minWidth: 120,
             borderRadius: 5,
             m: 3,
-            ml: 70,  
-            
+            ml: 70,
+
         }}>
             <FormControl fullWidth >
-                <InputLabel id="demo-simple-select-label" style={{marginTop: -10 }}>Region</InputLabel>
-                <Select style={{height:36, backgroundColor:"white" }}
+                <InputLabel id="demo-simple-select-label" style={{ marginTop: -10 }}>Region</InputLabel>
+                <Select style={{ height: 36, backgroundColor: "white" }}
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value={region}
