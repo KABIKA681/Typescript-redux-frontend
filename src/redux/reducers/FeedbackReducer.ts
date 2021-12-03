@@ -1,20 +1,20 @@
-
+import { ADD_COUNTRY_TO_BUZ, REMOVE_COUNTRY_FROM_BUZ, FeedbackActions, BuzReducerState } from "../../types"
 
 //Initial state
 
-const initState = {
+const initState:BuzReducerState = {
     buz: [],
 
 }
 
 //cart reducer function
 
-export default function feedbackReducer(state = initState, action: any) {
+export default function feedbackReducer(state:BuzReducerState = initState, action:FeedbackActions):BuzReducerState {
     
     switch (action.type) {
         
         //adding country to buz
-        case 'ADD_COUNTRY_TO_BUZ': {
+        case ADD_COUNTRY_TO_BUZ: {
             const country = action.payload
 
             return {
@@ -23,7 +23,7 @@ export default function feedbackReducer(state = initState, action: any) {
 
             }
         }
-        case 'REMOVE_COUNTRY_FROM_BUZ': {
+        case REMOVE_COUNTRY_FROM_BUZ: {
             const newCountry = action.payload
             const tempBuz= state.buz.filter(country=>country!==newCountry)
             return {
