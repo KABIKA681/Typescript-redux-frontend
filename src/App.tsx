@@ -41,7 +41,7 @@ function App() {
         <div className='App'>
           {/* <Topbar /> */}
           {/* <Sidebar /> */}
-          <Home/>
+          <Home />
         </div>
       </>
     </ThemeProvider >
