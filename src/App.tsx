@@ -4,7 +4,6 @@ import { createTheme } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import Topbar from './components/Topbar';
 import Home from './pages/Home/Home';
-import Barside from './pages/Barside/Barside';
 
 //create MATERIAL UI theme
 const theme = createTheme({
@@ -42,7 +41,6 @@ function App() {
         <div className='App'>
           {/* <Topbar /> */}
           {/* <Sidebar /> */}
-          {/* <Barside /> */}
           <Home/>
         </div>
       </>

@@ -21,7 +21,7 @@ export default function FilterRegion() {
             ml: 63,
 
         }}>
-            <FormControl fullWidth >
+            <FormControl fullWidth style={{display:"flex"}}>
                 <InputLabel id="demo-simple-select-label" style={{ marginTop: -10, fontSize: 14, fontFamily: 'sans-serif', fontWeight: '400' }}>Select by region</InputLabel>
                 <Select style={{ height: 36, backgroundColor: "white", fontSize: 14, fontFamily: 'sans-serif', fontWeight: '400' }}
                     labelId="demo-simple-select-label"
