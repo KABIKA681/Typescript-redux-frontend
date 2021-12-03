@@ -6,20 +6,32 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import image from '../asset/pexels-karolina-grabowska-4386346.jpg'
 
 
 const useStyles = makeStyles({
     root: {
-        maxWidth: 300,
-        maxHeight: 400,
+        maxWidth: 345,
+        maxHeight: 480,
         color: "black",
         background: "#F2F2F2",
-        marginRight:40
+        marginRight: 40,
+        marginBottom: 40
     },
 });
 
-export default function CountryCard() {
+type CountryCardProps = {
+
+    flag: string
+    name: string
+    region: string
+    population: number
+    capital: string
+    currency: string[]
+
+
+}
+
+export default function CountryCard({ flag, name, region, population, capital, currency }: CountryCardProps) {
     const classes = useStyles();
 
     return (
@@ -27,25 +39,28 @@ export default function CountryCard() {
             <CardActionArea>
                 <CardMedia
                     component="img"
-                    alt="CountryPicture"
+                    alt={name}
                     height="100"
-                    src={image}
+                    src={flag}
                     title="CountryPicture"
                 />
                 <CardContent>
                     <Typography gutterBottom style={{ fontSize: 20 }} component="h2">
-                        Afganistan
+                        {name}
                     </Typography>
                     <Typography style={{ fontSize: 16, color: "gray", fontFamily: "poppins, sans-serif" }} color="textSecondary" component="p">
                         <ul>
                             <li>
-                                population : value
+                                population : {population}
                             </li>
                             <li>
-                                population : value
+                                Capital : {capital}
                             </li>
                             <li>
-                                population : value
+                                Region : {region}
+                            </li>
+                            <li>
+                                Currency : {currency}
                             </li>
                         </ul>
                     </Typography>

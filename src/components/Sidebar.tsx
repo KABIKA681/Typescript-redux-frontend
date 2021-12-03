@@ -1,22 +1,26 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props */
 
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import CountryCard from "./CountryCard";
 import { fetchAllCountries } from '.././redux/actions'
-
+import { AppState } from "../types";
 
 
 export default function Sidebar() {
     const [show, setShow] = useState(false);
+
+    //getting all countries from redux state
+    const countries = useSelector((state: AppState) => state.countryReducer.countries)
+    console.log(countries)
+    const isLoading = useSelector((state: AppState) => state.countryReducer.isLoading)
 
     //=================//
     const dispatch = useDispatch()
     //dispatch fetcchallcountries when page load
     React.useEffect(() => {
         dispatch(fetchAllCountries())
-        console.log(fetchAllCountries)
     }, [dispatch])
 
     return (
@@ -239,10 +243,13 @@ export default function Sidebar() {
                         </div>
                     </div>
                     <div className="p-10 flex justify-between flex-wrap">
-                        <CountryCard />
-                        <CountryCard />
-                        <CountryCard />
-                        <CountryCard />
+                        {isLoading && <div>Loading...</div>}
+                        {!isLoading && countries &&
+                            countries.map(country => (
+                                <CountryCard {...country} />
+                            ))}
+
+
                     </div>
                 </div>
 
