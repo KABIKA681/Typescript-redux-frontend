@@ -4,10 +4,11 @@ import React, { useState } from "react";
 import RoutesPage from "../Routes";
 import FilterRegion from "./FilterRegion"
 
+
+
 export default function Topbar() {
     const [show, setShow] = useState(false);
     const [profile, setProfile] = useState(false);
-
 
     return (
         <>
@@ -109,7 +110,7 @@ export default function Topbar() {
 
                         </div>
 
-                        <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24 ">
+                        <div className="w-1/2 h-full hidden lg:flex items-center pr-10  ">
                             <FilterRegion />
                         </div>
                     </div>

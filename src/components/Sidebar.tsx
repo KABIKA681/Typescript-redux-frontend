@@ -1,13 +1,23 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props */
 
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import CountryCard from "./CountryCard";
-import Topbar from "./Topbar";
+import { fetchAllCountries } from '.././redux/actions'
+
 
 
 export default function Sidebar() {
     const [show, setShow] = useState(false);
+
+    //=================//
+    const dispatch = useDispatch()
+    //dispatch fetcchallcountries when page load
+    React.useEffect(() => {
+        dispatch(fetchAllCountries())
+        console.log(fetchAllCountries)
+    }, [dispatch])
 
     return (
         <>
@@ -227,26 +237,12 @@ export default function Sidebar() {
 
                             </div>
                         </div>
-
                     </div>
-                    {/*Mobile responsive sidebar*/}
-                    {/* Sidebar ends */}
-
-                    <div className="p-10 flex flex-wrap justify-evenly">
-                        <div className="mr-14">
-                            <CountryCard />
-                        </div>
-                        <div className="mr-14">
-                            <CountryCard />
-                        </div>
-                        <div className="mr-14">
-                            <CountryCard />
-                        </div>
-                        <div>
-                            <CountryCard />
-                        </div>
-
-
+                    <div className="p-10 flex justify-between flex-wrap">
+                        <CountryCard />
+                        <CountryCard />
+                        <CountryCard />
+                        <CountryCard />
                     </div>
                 </div>
 

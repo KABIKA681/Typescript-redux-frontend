@@ -8,7 +8,6 @@ const initState = {
 }
 
 
-
 export default function makeStore( initialState = initState) {
      
     const middlewares = [thunk] 

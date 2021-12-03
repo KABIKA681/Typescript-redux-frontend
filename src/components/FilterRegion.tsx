@@ -17,8 +17,8 @@ export default function FilterRegion() {
         <Box sx={{
             minWidth: 160,
             borderRadius: 5,
-            m: 3,
-            ml: 70,
+            m: 3.5,
+            ml: 63,
 
         }}>
             <FormControl fullWidth >
