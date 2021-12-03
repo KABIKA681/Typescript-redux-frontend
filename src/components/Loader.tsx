@@ -4,6 +4,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Skeleton from '@mui/material/Skeleton';
 
+
 const data = [
     {
         src: 'https://flagcdn.com/rw.svg',
@@ -34,7 +35,7 @@ function Media(props: CountryProps) {
     const { loading = false } = props;
 
     return (
-        <Grid container wrap="nowrap">
+        <Grid container wrap="wrap">
             {(loading ? Array.from(new Array(4)) : data).map((item, index) => (
                 <Box key={index} sx={{ width: 300, marginRight: 6, my: 3 }}>
                     {item ? (
@@ -72,7 +73,7 @@ export default function Loader() {
             <Media loading />
             <Media loading />
             <Media loading />
-            
+
         </Box>
     );
 }
