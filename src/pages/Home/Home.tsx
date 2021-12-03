@@ -6,6 +6,7 @@ import { fetchAllCountries } from "../../redux/actions";
 import { AppState } from "../../types";
 import CountryCard from "../../components/CountryCard";
 import FilterRegion from "../../components/FilterRegion";
+import Loader from "../../components/Loader";
 
 export default function Home() {
     const [show, setShow] = useState(false);
@@ -25,9 +26,9 @@ export default function Home() {
 
     return (
         <>
-            <div className="w-full h-full bg-white">
-                <div className="flex flex-no-wrap">
-                    <div className="absolute lg:relative w-64 h-screen shadow bg-white hidden lg:block">
+            <div className="w-full h-screen bg-white">
+                <div className="flex flex-no-wrap h-full">
+                    <div className="absolute lg:relative w-64 h-screen shadow-xl  bg-white  hidden lg:block">
                         <div className="h-16 w-full flex items-center px-8 pt-10" >
 
                             <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -242,18 +243,21 @@ export default function Home() {
 
                     <div className="w-full">
                         {/* Navigation starts */}
-                        <nav className="h-16 flex items-center lg:items-stretch justify-end lg:justify-between bg-white shadow relative z-10">
+                        <nav className="h-16 flex items-center lg:items-stretch justify-end lg:justify-between bg-white  shadow-xl relative z-10">
                             <div className="hidden lg:flex w-full pr-6">
                                 <div className="w-1/2 h-full hidden lg:flex items-center pl-6 pr-24">
                                     <div className="relative w-full">
-                                        <div className="font-bold">
-                                            <p>MY LIST</p>
-                                        </div>
+                                            <div className="font-bold">
+                                                <p>MY LIST</p>
+                                            </div>
                                     </div>
                                 </div>
+                                
                                 <div className="w-1/2 hidden lg:flex">
-                                    <div className="w-full flex items-center pl-8 justify-end">
+                                    <div className="w-full flex items-center pl-8 justify-end ">
+                                    <p className="text-sm font-bold -mr-6">LIGHT MODE</p>
                                         <div className="h-full w-20 flex items-center justify-center ">
+                                            
                                             <div className="relative cursor-pointer">
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -306,7 +310,7 @@ export default function Home() {
                                             <line x1={21} y1={21} x2={15} y2={15} />
                                         </svg>
                                     </div>
-                                    <input className=" border-none focus:outline-none focus:border-red-600 rounded w-full text-sm text-gray-500 bg-gray-100 pl-12 py-2" type="text" placeholder="Search For a Country..." />
+                                    <input className=" border-gray-400 w-80 focus:outline-none rounded  text-sm text-gray-500 bg-white pl-10 py-1.5" type="text" placeholder="Search For a Country..." />
                                 </div>
                             </div>
                             <div className="w-1/2 h-full hidden lg:flex items-center -mt-8">
@@ -318,7 +322,7 @@ export default function Home() {
 
                         <div className=" mx-20 py-10 h-64  w-full  flex flex-wrap">
 
-                            {isLoading && <div>Loading...</div>}
+                            {isLoading && <div><Loader/></div>}
                             {!isLoading && countries &&
                                 countries.map(country => (
                                     <CountryCard {...country} />
