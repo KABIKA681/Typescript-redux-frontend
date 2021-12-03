@@ -15,8 +15,8 @@ export default function makeStore( initialState = initState) {
 
     // redux dev tool setup 
     if (process.env.NODE_ENV === 'development') {
-        if ((window as any).__REDUX_DEVTOOLS_EXTENSIONS_COMPOSE__) {
-            composeEnhancers = (window as any).____REDUX_DEVTOOLS_EXTENSIONS_COMPOSE__
+        if ((window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) {
+            composeEnhancers = (window as any).____REDUX_DEVTOOLS_EXTENSION_COMPOSE__
         }
     }
 
