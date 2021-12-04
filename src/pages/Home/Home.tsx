@@ -2,11 +2,15 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchAllCountries } from "../../redux/actions";
+import { fetchAllCountries, addCountryToBuz } from "../../redux/actions";
 import { AppState } from "../../types";
 import CountryCard from "../../components/CountryCard";
 import FilterRegion from "../../components/FilterRegion";
 import Loader from "../../components/Loader";
+
+
+
+
 
 export default function Home() {
     const [show, setShow] = useState(false);
@@ -23,6 +27,14 @@ export default function Home() {
     React.useEffect(() => {
         dispatch(fetchAllCountries())
     }, [dispatch])
+
+    //====================//
+    //let us bring cart
+    const buz = useSelector((state: AppState) => state.feedbackReducer.buz)
+
+
+
+
 
     return (
         <>
@@ -254,7 +266,7 @@ export default function Home() {
 
                                 <div className="w-1/2 hidden lg:flex">
                                     <div className="w-full flex items-center pl-8 justify-end ">
-                                        <p className="text-sm font-bold -mr-6">LIGHT MODE</p>
+                                        <p className="text-sm  -mr-6">Theme mode</p>
                                         <div className="h-full w-20 flex items-center justify-center ">
 
                                             <div className="relative cursor-pointer">
@@ -263,14 +275,16 @@ export default function Home() {
                                                 </svg>
                                             </div>
                                         </div>
-                                        <div className="h-full w-20 flex items-center justify-center ">
-                                            <div className="relative cursor-pointer text-gray-600">
-                                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-bell" width={28} height={28} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                        {/*ADD COUNTRY TO BUZZ*/}
+                                        <div className="h-full w-20 flex items-center justify-center cursor-pointer ">
+                                            <div className="relative cursor-pointer text-gray-600 mt-2.5 mr-8">
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-bell " width={30} height={30} viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                                     <path stroke="none" d="M0 0h24v24H0z" />
                                                     <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6" />
                                                     <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
                                                 </svg>
-                                                <div className="w-2 h-2 rounded-full bg-red-600 border border-white absolute inset-0 mt-1 mr-1 m-auto" />
+                                                <p className="w-5 h-5  border-white absolute inset-0 -mt-1 -mr-1.5 m-auto text-white bg-red-500 pb-4 pr-4 pl-0.5 pt-0 rounded-full text-sm align-center justify-center" >
+                                                    {buz && buz.length}</p>
                                             </div>
                                         </div>
 
@@ -324,7 +338,7 @@ export default function Home() {
                             {isLoading && <div><Loader /></div>}
                             {!isLoading && countries &&
                                 countries.map(country => (
-                                    <CountryCard {...country} />
+                                    <CountryCard {...country} onClick={() => dispatch(addCountryToBuz(country))} />
                                 ))}
 
                         </div>
