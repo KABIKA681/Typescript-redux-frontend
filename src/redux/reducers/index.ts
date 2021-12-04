@@ -1,14 +1,20 @@
+/* eslint-disable import/no-anonymous-default-export */
 import {combineReducers} from 'redux'
 
-import countryReducer from './CountryReducer'
-import feedbackReducer from './FeedbackReducer'
+import countries from './countries'
+// import feedbackReducer from './FeedbackReducer'
+// import removeCountryReducer from './countries/RemoveCountryReducer'
 
+// const rootReducer = () => 
+    
+//     combineReducers({
+//         countryReducer,
+//         feedbackReducer,
+//         removeCountryReducer
+//     })
 
-const rootReducer = () => 
-    combineReducers({
-        countryReducer,
-        feedbackReducer
-    })
-
-
-export default rootReducer
+export default {
+    countries,
+    // feedbackReducer,
+    // removeCountryReducer
+}

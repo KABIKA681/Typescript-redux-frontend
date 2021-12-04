@@ -1,15 +1,14 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props */
-import React, { useState} from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 
 
 
 function Sidebar() {
-    const [show, setShow] = useState()
 
     return (
-        <div className="absolute lg:relative w-64 h-screen shadow-xl  bg-red-400  hidden lg:block">
+        <div className="absolute lg:relative w-64 h-screen shadow-xl  bg-white  hidden lg:block">
             <div className="h-16 w-full flex items-center px-8 pt-10" >
                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="60.000000pt" height="688.000000pt" viewBox="0 0 2408.000000 988.000000"
@@ -88,8 +87,8 @@ l3 -3155 28 -100 c37 -136 130 -320 213 -423 172 -215 405 -353 685 -407 71
         </div>
         // {/*MOBILE RESPONSICE SIDEBAR*/ }
 
-        
-    
+
+
     )
 }
 

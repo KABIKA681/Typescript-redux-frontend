@@ -1,42 +1,69 @@
 import React from 'react'
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Menu from '@material-ui/core/Menu';
+import Fade from '@material-ui/core/Fade';
+// import DeleteIcon from '@material-ui/icons/Delete';
+import {useDispatch} from 'react-redux'
 
-export default function Buzmenu() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+// import {removeCountryFromCart} from '../../redux/actions'
 
-  return (
-    <div>
-      <Button
-        id="basic-button"
-        aria-controls="basic-menu"
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id="basic-menu"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
-        }}
-      >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    </div>
-  );
+
+
+type CartMenuProps={
+    buz:{}[]
+    onClick:Function
+    menuOpen:boolean
+    anchorEl:null | HTMLElement
+
 }
+
+const BuzMenu=({buz, onClick, menuOpen, anchorEl}:CartMenuProps)=> {
+
+
+    const dispatch=useDispatch()
+  
+    const handleClose = () => {
+      onClick()
+    };
+  
+
+    return (
+        <div className="cart-menu">            
+      <Menu
+        className="cart-menu__menu"
+        id="fade-menu"
+        anchorEl={anchorEl}
+        keepMounted
+        open={menuOpen}
+        onClose={handleClose}
+        TransitionComponent={Fade}
+      >
+          <h2 >Cart items</h2>
+
+          {/* items */}
+          <div className="cart-menu__menu-items">
+
+                  {/* each item/country */}
+                  {buz.length===0 && 
+                    <div className="cart-menu__empty">
+                        <h2>No items in the cart</h2>
+                    </div>
+                  }
+
+                  {buz && buz.map((country:any)=>(
+                      <div className="cart-menu__menu-item">
+                      <img src={country.flag} alt={country.name} />
+                      <h2>{country.name}</h2>
+                    </div>
+
+                  ))}
+
+                  
+
+          </div>
+       
+      </Menu>
+        </div>
+    )
+}
+
+export default BuzMenu

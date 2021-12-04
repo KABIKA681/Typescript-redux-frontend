@@ -4,11 +4,19 @@ export const FETCH_COUNTRIES_SUCCESS='FETCH_COUNTRIES_SUCCESS'
 export const FETCH_COUNTRIES_FAILURE = 'FETCH_COUNTRIES_FAILURE'
 
 //types
-export type CountryReducerState = {
-    countries: [],
-    isLoading:boolean,
-    error:string
-}
+// export type CountryReducerState = {
+//     countries: {
+//     data: [],
+//     isLoading:boolean,
+//     error:string  
+//     },
+//     removeCountry: {
+//         data: null,
+//         isLoading:boolean,
+//         error:string   
+//     }
+    
+// }
 
 // action types
 export type FetchAllCountriesLoadingAction = {

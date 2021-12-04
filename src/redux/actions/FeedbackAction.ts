@@ -1,8 +1,10 @@
 
-import {ADD_COUNTRY_TO_BUZ, REMOVE_COUNTRY_FROM_BUZ, BuzCountry, FeedbackActions} from '../../types'
+import {ADD_COUNTRY_TO_BUZ, REMOVE_COUNTRY_FROM_BUZ} from '../../constants/action-types/countries/visitedCountry'
 
 //Add country to BUzzz
-export function addCountryToBuz(country:BuzCountry):FeedbackActions{
+export function addCountryToBuz(country: {}){
+    
+  
 
     return {
         type: ADD_COUNTRY_TO_BUZ,
@@ -13,7 +15,7 @@ export function addCountryToBuz(country:BuzCountry):FeedbackActions{
 
 //Remove country from the card
 
-export function removeCountryToBuz(country:BuzCountry):FeedbackActions{
+export function removeCountryToBuz(country:{}){
 
     return {
         type: REMOVE_COUNTRY_FROM_BUZ,

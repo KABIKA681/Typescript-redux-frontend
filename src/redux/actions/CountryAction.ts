@@ -1,10 +1,11 @@
+/* eslint-disable no-restricted-globals */
 import {Dispatch} from 'redux'
 import axios from 'axios'
 
-import {FETCH_COUNTRIES_SUCCESS, CountryActions, FETCH_COUNTRIES_FAILURE, FETCH_COUNTRIES_LOADING} from '../../types'
+import {FETCH_COUNTRIES_SUCCESS, FETCH_COUNTRIES_FAILURE, FETCH_COUNTRIES_LOADING, REMOVE_COUNTRY_FROM_THE_LIST} from '../../constants/action-types/countries/fetchCountries'
 
 //fetch all countries
-export function fetchAllCountriesLoading():CountryActions{
+export function fetchAllCountriesLoading(){
 
     return {
         type:FETCH_COUNTRIES_LOADING
@@ -13,16 +14,24 @@ export function fetchAllCountriesLoading():CountryActions{
 }
 
 // fetch all countries success
-export function fetchAllCountriesSuccess(countries:[]):CountryActions{
+export function fetchAllCountriesSuccess(countries:[]){
     return {
         type:FETCH_COUNTRIES_SUCCESS,
         payload:countries
     }
 
 }
+// remove country
+export function removeCountry(name:string){
+    return {
+        type:REMOVE_COUNTRY_FROM_THE_LIST,
+        payload:name
+    }
+
+}
 
 // fetch all countries failure
-export function fetchAllCountriesFailure(error:string):CountryActions{
+export function fetchAllCountriesFailure(error:string){
     return {
         type:FETCH_COUNTRIES_FAILURE,
         payload:error
@@ -48,4 +57,10 @@ export function fetchAllCountries(){
         })
     }
 
+}
+
+export function removeCountryAction(name: string) {
+    return (dispatch: Dispatch) => {
+        dispatch(removeCountry(name))
+    }
 }
