@@ -2,32 +2,32 @@ import React from 'react'
 import Menu from '@material-ui/core/Menu';
 import Fade from '@material-ui/core/Fade';
 // import DeleteIcon from '@material-ui/icons/Delete';
-import {useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 // import {removeCountryFromCart} from '../../redux/actions'
 
 
 
-type CartMenuProps={
-    buz:{}[]
-    onClick:Function
-    menuOpen:boolean
-    anchorEl:null | HTMLElement
+type CartMenuProps = {
+  buz: {}[]
+  onClick: Function
+  menuOpen: boolean
+  anchorEl: null | HTMLElement
 
 }
 
-const BuzMenu=({buz, onClick, menuOpen, anchorEl}:CartMenuProps)=> {
+const BuzMenu = ({ buz, onClick, menuOpen, anchorEl }: CartMenuProps) => {
 
 
-    const dispatch=useDispatch()
-  
-    const handleClose = () => {
-      onClick()
-    };
-  
+  const dispatch = useDispatch()
 
-    return (
-        <div className="cart-menu">            
+  const handleClose = () => {
+    onClick()
+  };
+
+
+  return (
+    <div className="cart-menu">
       <Menu
         className="cart-menu__menu"
         id="fade-menu"
@@ -37,33 +37,33 @@ const BuzMenu=({buz, onClick, menuOpen, anchorEl}:CartMenuProps)=> {
         onClose={handleClose}
         TransitionComponent={Fade}
       >
-          <h2 >Cart items</h2>
+        <h2 >Cart items</h2>
 
-          {/* items */}
-          <div className="cart-menu__menu-items">
+        {/* items */}
+        <div className="cart-menu__menu-items">
 
-                  {/* each item/country */}
-                  {buz.length===0 && 
-                    <div className="cart-menu__empty">
-                        <h2>No items in the cart</h2>
-                    </div>
-                  }
+          {/* each item/country */}
+          {buz.length === 0 &&
+            <div className="m-1">
+              <h2>10</h2>
+            </div>
+          }
 
-                  {buz && buz.map((country:any)=>(
-                      <div className="cart-menu__menu-item">
-                      <img src={country.flag} alt={country.name} />
-                      <h2>{country.name}</h2>
-                    </div>
+          {buz && buz.map((country: any) => (
+            <div className="cart-menu__menu-item">
+              <img src={country.flag} alt={country.name} />
+              <h2>{country.name}</h2>
+            </div>
 
-                  ))}
+          ))}
 
-                  
 
-          </div>
-       
-      </Menu>
+
         </div>
-    )
+
+      </Menu>
+    </div>
+  )
 }
 
 export default BuzMenu

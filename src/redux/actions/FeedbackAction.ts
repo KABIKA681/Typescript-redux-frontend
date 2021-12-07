@@ -4,7 +4,6 @@ import {ADD_COUNTRY_TO_BUZ, REMOVE_COUNTRY_FROM_BUZ} from '../../constants/actio
 //Add country to BUzzz
 export function addCountryToBuz(country: {}){
     
-  
 
     return {
         type: ADD_COUNTRY_TO_BUZ,
