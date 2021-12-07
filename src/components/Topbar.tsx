@@ -9,7 +9,7 @@ import Buzmenu from "../components/Buzmenu";
 
 export default function Topbar() {
     const [show, setShow] = useState(false);
-    const buz = useSelector((state: IState) => state.feedbackReducer.buz)
+    // const buz = useSelector((state: IState) => state.feedbackReducer.buz)
 
     return (
         <>
@@ -179,7 +179,7 @@ export default function Topbar() {
                                             <path d="M9 17v1a3 3 0 0 0 6 0v-1" />
                                         </svg>
                                         <p className="w-5 h-5  border-white absolute inset-0 -mt-1 -mr-1.5 m-auto text-white bg-red-500 pb-4 pr-4 pl-0.5 pt-0 rounded-full text-sm align-center justify-center" >
-                                            {buz && buz.length}
+                                            {/* {buz && buz.length} */}
                                         </p>
                                     </div>
                                     {/* <Buzmenu /> */}

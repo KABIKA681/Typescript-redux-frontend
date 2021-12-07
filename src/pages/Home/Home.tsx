@@ -57,7 +57,7 @@ export default function Home() {
 
                             {countryList.loading && <div><Loader /></div>}
                             {countryList.data?.map((country: any) => (
-                                <CountryCard {...country} />
+                                <CountryCard {...country} onClick={()=>}/>
                             ))}
 
                         </div>
