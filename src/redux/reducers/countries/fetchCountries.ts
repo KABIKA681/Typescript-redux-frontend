@@ -30,7 +30,7 @@ export default function countryReducer(state: ICountries, { type, payload }: any
                 
             }
         case REMOVE_COUNTRY_FROM_THE_LIST:
-            console.log(`state`, state)
+            // console.log(`state`, state)
             return {
                 ...state,
                 countryList: {

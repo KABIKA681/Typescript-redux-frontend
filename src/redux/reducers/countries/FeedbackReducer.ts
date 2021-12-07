@@ -8,8 +8,6 @@ import ICountries from '../../../types/initial-states/ICountries'
 
 export default function feedbackReducer(state:ICountries, { type, payload }: any) {
     
-
-    
     switch (type) {
         
         //adding country to buz
