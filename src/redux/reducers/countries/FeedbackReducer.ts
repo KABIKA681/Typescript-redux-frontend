@@ -13,22 +13,22 @@ export default function feedbackReducer(state:ICountries, { type, payload }: any
         //adding country to buz
         case ADD_COUNTRY_TO_BUZ: {
             const country = payload
-
+            console.log(`payload`, payload)
             return {
                 ...state,
                 buz:[...state.visitedCountry.data, country]
 
             }
         }
-        case REMOVE_COUNTRY_FROM_BUZ: {
-            const newCountry = payload
-            const tempBuz= state.visitedCountry.data.filter(country=>country!==newCountry)
-            return {
-                ...state, 
-                buz:[...tempBuz]
-            } 
+        // case REMOVE_COUNTRY_FROM_BUZ: {
+        //     const newCountry = payload
+        //     const tempBuz= state.visitedCountry.data.filter(country=>country!==newCountry)
+        //     return {
+        //         ...state, 
+        //         buz:[...tempBuz]
+        //     } 
 
-        }
+        // }
         default:
             return state
 

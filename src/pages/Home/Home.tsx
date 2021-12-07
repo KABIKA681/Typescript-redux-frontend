@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/role-supports-aria-props */
 import React from "react";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
-import { fetchAllCountries } from "../../redux/actions";
+import { fetchAllCountries, addCountryToBuz } from "../../redux/actions";
 import { InitialState, IState } from "../../types";
 import CountryCard from "../../components/CountryCard";
 import FilterRegion from "../../components/FilterRegion";
@@ -20,7 +20,6 @@ export default function Home() {
     const dispatch = useDispatch()
     //dispatch fetcchallcountries when page load
     React.useEffect(() => {
-        console.log(`here`)
         dispatch(fetchAllCountries())
     }, [])
 
@@ -57,7 +56,7 @@ export default function Home() {
 
                             {countryList.loading && <div><Loader /></div>}
                             {countryList.data?.map((country: any) => (
-                                <CountryCard {...country} onClick={()=>}/>
+                                <CountryCard {...country} onClick={() => dispatch(addCountryToBuz(country))} />
                             ))}
 
                         </div>

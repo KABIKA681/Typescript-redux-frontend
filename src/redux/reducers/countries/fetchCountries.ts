@@ -1,4 +1,6 @@
 import { FETCH_COUNTRIES_LOADING, FETCH_COUNTRIES_FAILURE, FETCH_COUNTRIES_SUCCESS, REMOVE_COUNTRY_FROM_THE_LIST } from '../../../constants/action-types/countries/fetchCountries';
+import { ADD_COUNTRY_TO_BUZ, REMOVE_COUNTRY_FROM_BUZ } from "../../../constants/action-types/countries/visitedCountry"
+
 import ICountries from '../../../types/initial-states/ICountries'
 
 
@@ -18,7 +20,6 @@ export default function countryReducer(state: ICountries, { type, payload }: any
             }
         //if fetching is successful 
         case FETCH_COUNTRIES_SUCCESS:
-            console.log(`state`, state)
             return {
                 ...state,
                 countryList: {
@@ -30,7 +31,6 @@ export default function countryReducer(state: ICountries, { type, payload }: any
                 
             }
         case REMOVE_COUNTRY_FROM_THE_LIST:
-            // console.log(`state`, state)
             return {
                 ...state,
                 countryList: {
@@ -41,6 +41,17 @@ export default function countryReducer(state: ICountries, { type, payload }: any
                 }
                 
             }
+            case ADD_COUNTRY_TO_BUZ:
+                return {
+                    ...state,
+                    visitedCountry: {
+                    ...state.visitedCountry,
+                    data: [...state.visitedCountry.data, payload],
+                    loading:false, 
+                    error: null, 
+                    }
+                    
+                }
             
         //if fetching has any errors
         case FETCH_COUNTRIES_FAILURE:
