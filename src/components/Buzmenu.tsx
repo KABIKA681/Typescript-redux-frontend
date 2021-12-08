@@ -22,7 +22,7 @@ const BuzMenu = ({ buz, onClick, menuOpen, anchorEl }: CartMenuProps) => {
   const dispatch = useDispatch()
 
   const handleClose = () => {
-    onClick()
+    onClick(null)
   };
 
 
