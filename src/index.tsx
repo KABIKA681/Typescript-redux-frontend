@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import ReactDOM from 'react-dom';
 import './index.css';
 import { BrowserRouter as Router } from 'react-router-dom'
+import AppStateProvider from './login/app/provider';
 
 import makeStore from './redux/store'
 
@@ -13,9 +14,11 @@ const store = makeStore();
 ReactDOM.render(
 
   <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
+    <AppStateProvider>
+      <Router>
+        <App />
+      </Router>
+    </AppStateProvider>
   </Provider>
   ,
   document.getElementById('root')
