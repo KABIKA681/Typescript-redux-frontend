@@ -8,6 +8,7 @@ import FilterRegion from "../../components/FilterRegion";
 import Loader from "../../components/Loader";
 import Sidebar from "../../components/Sidebar";
 import Topbar from "../../components/Topbar";
+import { Routespage } from "../../Routes";
 
 
 const typedUseSelectorHook: TypedUseSelectorHook<InitialState> = useSelector;
@@ -27,6 +28,7 @@ export default function Home() {
 
     return (
         <>
+
             <div className="w-full h-screen bg-white">
                 <div className="flex flex-no-wrap h-full">
                     <Sidebar />

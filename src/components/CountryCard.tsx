@@ -6,8 +6,7 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { useDispatch, useSelector } from 'react-redux';
-import { IState } from '../types';
+import { useDispatch,  } from 'react-redux';
 import { removeCountryAction } from '../redux/actions';
 
 const useStyles = makeStyles({

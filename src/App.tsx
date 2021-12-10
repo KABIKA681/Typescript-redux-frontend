@@ -2,7 +2,6 @@ import React from 'react'
 import { createTheme } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import Home from './pages/Home/Home';
-
 //create MATERIAL UI theme
 const theme = createTheme({
 

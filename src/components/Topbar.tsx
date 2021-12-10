@@ -2,8 +2,6 @@
 
 import React, { useState } from "react";
 import { useSelector, TypedUseSelectorHook } from "react-redux";
-import countryReducer from "../redux/reducers/countries/fetchCountries";
-import { FeedbackActions } from "../types/FeedbackTypes";
 // import {visitedCountry} from '../redux/initial-states/countries'
 import BuzMenu from "../components/Buzmenu";
 import { IState, InitialState } from "../types";
@@ -29,10 +27,6 @@ export default function Topbar() {
     //Cart open menu related state
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const menuOpen = Boolean(anchorEl);
-    const handleBuzClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-        setAnchorEl(event.currentTarget);
-        event.preventDefault();
-    }
 
     const handleBuzClose = () => {
         setAnchorEl(null);
