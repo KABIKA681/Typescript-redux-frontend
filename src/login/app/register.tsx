@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { useRegisterMutation } from '../gql/generated/graphql';
-import { useHistory } from 'react-router-dom';
+import { useRegisterMutation } from '../../gql/generated/graphql';
+import { useNavigate } from 'react-router-dom';
 import { AppStateContext } from './provider';
 
 export const Register: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { gqlError } = useContext(AppStateContext)
   const [register] = useRegisterMutation();
 
@@ -24,7 +24,7 @@ export const Register: React.FC = () => {
           const { data } = await register({ variables: { email, password, confirmation } });
           if (data === undefined || data?.register === undefined)
             throw new Error('Invalid credentials');
-          history.replace(`/login`);
+            navigate(`/login`);
         } catch (err) {
           setShow(true);
         }

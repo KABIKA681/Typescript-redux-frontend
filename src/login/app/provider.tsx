@@ -8,7 +8,7 @@ import {
     Observable
 } from '@apollo/client';
 
-import onError from '@apollo/link-error'
+import { onError } from '@apollo/link-error'
 
 let authToken = '';
 const initial = {

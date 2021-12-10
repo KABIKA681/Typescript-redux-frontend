@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import { useLoginMutation } from '../gql/generated/graphql';
+import { useNavigate } from 'react-router-dom';
+import { useLoginMutation } from '../../gql/generated/graphql';
 import { AppStateContext } from './provider';
 
 export const Login: React.FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { appSetLogin, gqlError } = useContext(AppStateContext)
   const [login] = useLoginMutation();
 
@@ -24,7 +24,7 @@ export const Login: React.FC = () => {
           if (data === undefined || data?.login === undefined || data.login?.access_token === undefined)
             throw new Error('Invalid credentials');
           appSetLogin(data.login?.access_token!);
-          history.replace('/');
+          navigate('/');
         } catch (err) {
           setShow(true);
         }
