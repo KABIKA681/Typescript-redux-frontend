@@ -3,12 +3,29 @@
 /* eslint-disable jsx-a11y/no-redundant-roles */
 
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { loginAction } from '../../../redux/actions/auth/login'
+
 
 function LoginForm() {
     const [sidebar, setsidebar] = useState();
-    const [formData, setFormData] = useState({});
-    const history = useNavigate()
+    const [formData, setFormData] = useState<Record<string, string>>({
+        email: 'paskal@gmail.com',
+        password: '12345'
+    })
+
+    const navigate = useNavigate()
+
+    const dispatch = useDispatch()
+
+    const handleLogin = () => {
+        const loginData = {
+            email: formData.email,
+            password: formData.password
+        }
+        // dispatch(loginAction(loginData))
+    }
 
     return (
         <div className="h-full bg-gradient-to-tl from-blue-800 to-blue-200 w-full py-16 px-4">
@@ -79,7 +96,7 @@ function LoginForm() {
                         </div>
                     </div>
                     <div className="mt-8">
-                        <button onClick={() => history('/home')} role="button" aria-label="create my account" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+                        <button onClick={() => navigate('/home')} role="button" aria-label="create my account" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
                             LOG IN NOW
                         </button>
                     </div>
