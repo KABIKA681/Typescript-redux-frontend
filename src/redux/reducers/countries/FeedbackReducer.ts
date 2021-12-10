@@ -20,15 +20,6 @@ export default function feedbackReducer(state:ICountries, { type, payload }: any
 
             }
         }
-        // case REMOVE_COUNTRY_FROM_BUZ: {
-        //     const newCountry = payload
-        //     const tempBuz= state.visitedCountry.data.filter(country=>country!==newCountry)
-        //     return {
-        //         ...state, 
-        //         buz:[...tempBuz]
-        //     } 
-
-        // }
         default:
             return state
 

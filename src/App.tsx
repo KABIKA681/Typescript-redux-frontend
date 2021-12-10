@@ -2,6 +2,7 @@ import React from 'react'
 import { createTheme } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/styles'
 import Home from './pages/Home/Home';
+import { Routespage } from "./Routes";
 //create MATERIAL UI theme
 const theme = createTheme({
 
@@ -36,7 +37,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <>
         <div className='App'>
-          <Home />
+          <Routespage />
         </div>
       </>
     </ThemeProvider >

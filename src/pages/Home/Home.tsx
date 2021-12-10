@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/role-supports-aria-props */
 import React from "react";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
@@ -18,6 +19,28 @@ export default function Home() {
 
     const { countries: { countryList } } = typedUseSelectorHook(({ countries }) => ({ countries }))
 
+    // for filtered countries 
+    const [filteredCountries, setFilteredCountries] = React.useState(countryList)
+
+    //const search keyword
+    const [searchKeyword, setSearchKeyword] = React.useState('')
+
+    React.useEffect(() => {
+        setFilteredCountries(countryList)
+    }, [countryList])
+
+    //filter country by keyword
+    // React.useEffect(() => {
+    //     const _tempCountries= countryList.filter((country: any) => country.name.toLowerCase().includes(searchKeyword.toLowerCase())) 
+    //     setFilteredCountries(_tempCountries)
+    // }, [searchKeyword, countryList])
+
+    //update searchKeyword
+
+    const handleSearchKeyword = (value: string) => {
+        setSearchKeyword(value)
+    }
+
     const dispatch = useDispatch()
     //dispatch fetcchallcountries when page load
     React.useEffect(() => {
@@ -28,7 +51,7 @@ export default function Home() {
 
     return (
         <>
-
+            {/* <Routespage/> */}
             <div className="w-full h-screen bg-white">
                 <div className="flex flex-no-wrap h-full">
                     <Sidebar />
@@ -57,8 +80,8 @@ export default function Home() {
                         <div className=" mx-20 py-10 h-64  w-full  flex flex-wrap">
 
                             {countryList.loading && <div><Loader /></div>}
-                            {countryList.data?.map((country: any) => (
-                                <CountryCard {...country} onClick={() => dispatch(addCountryToBuz(country))} />
+                            {filteredCountries.data?.map((country: any) => (
+                                <CountryCard {...country} onClick={() => dispatch(addCountryToBuz(country))} searchKeyword={searchKeyword} />
                             ))}
 
                         </div>
@@ -69,4 +92,8 @@ export default function Home() {
 
         </>
     );
+}
+
+function countries(countries: any): [any, any] {
+    throw new Error("Function not implemented.");
 }

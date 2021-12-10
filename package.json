@@ -2,6 +2,7 @@
   "name": "frontend-ui-country",
   "version": "0.1.0",
   "private": true,
+  "CI":false,
   "dependencies": {
     "@apollo/client": "^3.5.6",
     "@apollo/link-error": "^2.0.0-beta.3",
