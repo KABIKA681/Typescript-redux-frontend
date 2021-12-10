@@ -123,7 +123,7 @@ l3 -3155 28 -100 c37 -136 130 -320 213 -423 172 -215 405 -353 685 -407 71
                     </div>
                     <p className="text-sm mt-7 font-medium leading-none text-gray-500">
                         already have an account?{" "}
-                        <Link to="/login"><span tabIndex={0} role="link" aria-label="Sign up here" className="text-sm font-medium leading-none underline text-gray-800 cursor-pointer">
+                        <Link to="/"><span tabIndex={0} role="link" aria-label="Sign up here" className="text-sm font-medium leading-none underline text-gray-800 cursor-pointer">
                             {" "}
                             Login here
                         </span></Link>

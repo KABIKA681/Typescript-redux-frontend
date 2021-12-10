@@ -1,14 +1,14 @@
+/* eslint-disable jsx-a11y/aria-role */
+/* eslint-disable jsx-a11y/role-has-required-aria-props */
+/* eslint-disable jsx-a11y/no-redundant-roles */
 
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginForm() {
     const [sidebar, setsidebar] = useState();
     const [formData, setFormData] = useState({});
-
-    const onInputChange = (e: any) => {
-        console.log(`e.target`, e.target)
-    }
+    const history = useNavigate()
 
     return (
         <div className="h-full bg-gradient-to-tl from-blue-800 to-blue-200 w-full py-16 px-4">
@@ -62,7 +62,7 @@ function LoginForm() {
                     </div>
                     <div>
                         <label className="text-sm font-medium leading-none text-gray-800">Email</label>
-                        <input aria-label="enter email adress" role="input" onChange={onInputChange} name='email' type="email" className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                        <input aria-label="enter email adress" role="input" name='email' type="email" className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
                     </div>
                     <div className="mt-6  w-full">
                         <label className="text-sm font-medium leading-none text-gray-800">Password</label>
@@ -79,7 +79,7 @@ function LoginForm() {
                         </div>
                     </div>
                     <div className="mt-8">
-                        <button role="button" aria-label="create my account" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+                        <button onClick={() => history('/home')} role="button" aria-label="create my account" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
                             LOG IN NOW
                         </button>
                     </div>
