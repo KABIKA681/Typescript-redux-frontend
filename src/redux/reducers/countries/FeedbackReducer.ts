@@ -1,4 +1,4 @@
-import { ADD_COUNTRY_TO_BUZ, REMOVE_COUNTRY_FROM_BUZ } from "../../../constants/action-types/countries/visitedCountry"
+import { ADD_COUNTRY_TO_BUZ } from "../../../constants/action-types/countries/visitedCountry"
 import ICountries from '../../../types/initial-states/ICountries'
 
 //cart reducer function

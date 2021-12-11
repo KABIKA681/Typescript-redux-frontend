@@ -3,7 +3,7 @@
 import React from "react";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import { fetchAllCountries, addCountryToBuz } from "../../redux/actions";
-import { InitialState, IState } from "../../types";
+import { InitialState } from "../../types";
 import CountryCard from "../../components/countryCard";
 import FilterRegion from "../../components/filterRegion";
 import Loader from "../../components/loader";

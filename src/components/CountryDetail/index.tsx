@@ -1,9 +1,6 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import img from '../../asset/pexels-karolina-grabowska-4386346.jpg'
-import FilterRegion from '../filterRegion'
 import Sidebar from '../sidebar'
-import Topbar from '../topbar'
 import CountryDetailTopBar from './countryDetailTopbar'
 import TableDetail from './TableDetail'
 

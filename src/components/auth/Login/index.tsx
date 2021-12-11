@@ -5,20 +5,15 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { loginAction } from '../../../redux/actions/auth/login'
 
 
 function LoginForm() {
-    const [sidebar, setsidebar] = useState();
     const [formData, setFormData] = useState<Record<string, string>>({
         email: 'paskal@gmail.com',
         password: '12345'
     })
 
     const navigate = useNavigate()
-
-    const dispatch = useDispatch()
-
     const handleLogin = () => {
         const loginData = {
             email: formData.email,

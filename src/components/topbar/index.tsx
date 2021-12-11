@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useSelector, TypedUseSelectorHook } from "react-redux";
-// import {visitedCountry} from '../redux/initial-states/countries'
+
 import BuzMenu from "../buzmenu";
 import { IState, InitialState } from "../../types";
 
