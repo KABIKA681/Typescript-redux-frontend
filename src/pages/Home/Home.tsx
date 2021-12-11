@@ -29,7 +29,11 @@ export default function Home() {
         setFilteredCountries(countryList)
     }, [countryList])
 
-
+    //filter country by keyword
+    // React.useEffect(() => {
+    //     const _tempCountries= countryList.filter((country:any) => country.name.toLowerCase().includes(searchKeyword.toLowerCase()))
+    //     setFilteredCountries(_tempCountries)
+    // }, [countryList, searchKeyword])
 
     const handleSearchKeyword = (value: string) => {
         setSearchKeyword(value)
@@ -40,6 +44,7 @@ export default function Home() {
     React.useEffect(() => {
         dispatch(fetchAllCountries())
     }, [])
+
 
 
 

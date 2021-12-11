@@ -1,12 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
+
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { useDispatch,  } from 'react-redux';
+import { useDispatch, } from 'react-redux';
 import { removeCountryAction } from '../redux/actions';
 
 const useStyles = makeStyles({
@@ -37,7 +39,7 @@ export default function CountryCard({ flag, name, region, population, capital, c
     // const country = useSelector((state: IState) => state.removeCountryReducer.country)
 
     const dispatch = useDispatch()
-
+    const navigate = useNavigate()
     const handleDelete = (name: any) => {
         dispatch(removeCountryAction(name))
     }
@@ -45,8 +47,12 @@ export default function CountryCard({ flag, name, region, population, capital, c
 
     const classes = useStyles();
 
+    const handleOnClick = () => {
+
+    }
+
     return (
-        <Card className={classes.root} key={name}>
+        <Card className={classes.root} key={name} onClick={() => navigate('/country/detail', { state: { flag, name, region, population, capital, currency } })}>
             <CardActionArea>
                 <CardMedia
                     component="img"
