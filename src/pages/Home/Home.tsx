@@ -4,11 +4,11 @@ import React from "react";
 import { useDispatch, useSelector, TypedUseSelectorHook } from "react-redux";
 import { fetchAllCountries, addCountryToBuz } from "../../redux/actions";
 import { InitialState, IState } from "../../types";
-import CountryCard from "../../components/CountryCard";
-import FilterRegion from "../../components/FilterRegion";
-import Loader from "../../components/Loader";
-import Sidebar from "../../components/Sidebar";
-import Topbar from "../../components/Topbar";
+import CountryCard from "../../components/countryCard";
+import FilterRegion from "../../components/filterRegion";
+import Loader from "../../components/loader";
+import Sidebar from "../../components/sidebar";
+import Topbar from "../../components/topbar";
 import EmptyImg from '../../asset/empty.svg'
 
 const typedUseSelectorHook: TypedUseSelectorHook<InitialState> = useSelector;
@@ -27,7 +27,6 @@ export default function Home() {
     React.useEffect(() => {
         setFilteredCountries(countryList.data)
     }, [countryList])
-    console.log('------------', { filteredCountries, countryList })
 
     // filter country by keyword
     React.useEffect(() => {
@@ -39,10 +38,8 @@ export default function Home() {
     const handleSearchKeyword = ({ target: { value } }: any) => {
         setSearchKeyword(value)
     }
-    console.log(`filteredCountries`, filteredCountries)
 
     const dispatch = useDispatch()
-    //dispatch fetcchallcountries when page load
     React.useEffect(() => {
         dispatch(fetchAllCountries())
     }, [])
@@ -52,12 +49,8 @@ export default function Home() {
         setFilteredCountries(countries)
     }
 
-
-
-
     return (
         <>
-            {/* <Routespage/> */}
             <div className="w-full h-screen bg-white">
                 <div className="flex flex-no-wrap h-full">
                     <Sidebar />
@@ -91,10 +84,9 @@ export default function Home() {
                             ))}
                             {filteredCountries.length === 0 && (
                                 <div className="w-400 m-auto ">
-                                    <p className="bold text-2xl text-gray-400 w-30 m-auto">Oups! <br></br>No country found...</p>
                                     <img src={EmptyImg} width={400} />
                                 </div>
-                                
+
                             )}
 
                         </div>

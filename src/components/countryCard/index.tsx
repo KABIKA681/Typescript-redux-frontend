@@ -9,7 +9,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { useDispatch, } from 'react-redux';
-import { removeCountryAction } from '../redux/actions';
+import { removeCountryAction } from '../../redux/actions';
+
+
+
 
 const useStyles = makeStyles({
     root: {

@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { useSelector, TypedUseSelectorHook } from "react-redux";
 // import {visitedCountry} from '../redux/initial-states/countries'
-import BuzMenu from "../components/Buzmenu";
-import { IState, InitialState } from "../types";
+import BuzMenu from "../buzmenu";
+import { IState, InitialState } from "../../types";
 
 const typedUseSelectorHook: TypedUseSelectorHook<InitialState> = useSelector;
 
@@ -15,14 +15,6 @@ export default function Topbar() {
     const buz = useSelector((state: IState) => state.data)
 
     const { countries: { visitedCountry } } = typedUseSelectorHook(({ countries }) => ({ countries }))
-
-    console.log(`visitedCountry`, visitedCountry)
-    // const { onClick, drawerState } = props
-
-    // const onDrawerClick = () => {
-    //     onClick(!drawerState)
-    // }
-
 
     //Cart open menu related state
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);

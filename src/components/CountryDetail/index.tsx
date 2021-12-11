@@ -1,9 +1,9 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import img from '../../asset/pexels-karolina-grabowska-4386346.jpg'
-import FilterRegion from '../FilterRegion'
-import Sidebar from '../Sidebar'
-import Topbar from '../Topbar'
+import FilterRegion from '../filterRegion'
+import Sidebar from '../sidebar'
+import Topbar from '../topbar'
 import CountryDetailTopBar from './countryDetailTopbar'
 import TableDetail from './TableDetail'
 
@@ -14,7 +14,6 @@ const CoutryDetail = () => {
     console.log(country)
     return (
         <>
-            {/* <Routespage/> */}
             <div className="w-full h-screen bg-white">
                 <div className="flex flex-no-wrap h-full">
                     <Sidebar />
