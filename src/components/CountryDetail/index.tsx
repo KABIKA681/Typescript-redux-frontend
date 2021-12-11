@@ -25,9 +25,9 @@ const CoutryDetail = () => {
 
                         <div className=" mx-20 py-10 h-64  w-full  flex ">
 
-                            <div className='flex'>
-                                <div className='w-sm mr-20'>
-                                    <img src={country.flag} alt="" />
+                            <div className='flex '>
+                                <div className='w-80 mr-20 '>
+                                    <img src={country.flag} alt="" className='border' />
                                 </div>
                                 <div className='' style={{ width: "600px" }}>
                                     <h1 className='text-bold text-xl'>
@@ -35,7 +35,7 @@ const CoutryDetail = () => {
                                     </h1>
                                     <div className='flex flex-row mt-8' style={{ width: "600px" }}>
                                         <TableDetail />
-                                        <TableDetail />
+
                                     </div>
                                 </div>
                             </div>

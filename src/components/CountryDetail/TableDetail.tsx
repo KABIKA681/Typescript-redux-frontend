@@ -14,14 +14,16 @@ function FormRow() {
 
     return (
         <React.Fragment>
-            <Grid item xs={8}>
+            <Grid item xs={8} >
                 <ul className='mb-2'>
-                <li >native-name: {country.name}</li>
-                <li>population: {country.population}</li>
+                    <li >native-name: {country.name}</li>
+                    <li>population: {country.population}</li>
                     <li>region: {country.region}</li>
-                    <li>native-name: {country.name}</li>
-                <li>population: {country.population}</li>
-                <li>region: {country.region}</li>
+                    <li>currency: {country.currency}</li>
+                    <li >native-name: {country.name}</li>
+                    <li>population: {country.population}</li>
+                    <li>region: {country.region}</li>
+                    <li>currency: {country.currency}</li>
                 </ul>
             </Grid>
 
@@ -36,7 +38,7 @@ export default function TableDetail() {
                 <Grid container item spacing={1}>
                     <FormRow />
                 </Grid>
-                
+
             </Grid>
         </Box>
     );

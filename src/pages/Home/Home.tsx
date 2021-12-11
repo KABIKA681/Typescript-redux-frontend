@@ -9,8 +9,7 @@ import FilterRegion from "../../components/FilterRegion";
 import Loader from "../../components/Loader";
 import Sidebar from "../../components/Sidebar";
 import Topbar from "../../components/Topbar";
-import { Routespage } from "../../Routes";
-
+import EmptyImg from '../../asset/empty.svg'
 
 const typedUseSelectorHook: TypedUseSelectorHook<InitialState> = useSelector;
 
@@ -20,30 +19,38 @@ export default function Home() {
     const { countries: { countryList } } = typedUseSelectorHook(({ countries }) => ({ countries }))
 
     // for filtered countries 
-    const [filteredCountries, setFilteredCountries] = React.useState(countryList)
+    const [filteredCountries, setFilteredCountries] = React.useState<[]>([])
 
     //const search keyword
     const [searchKeyword, setSearchKeyword] = React.useState('')
 
     React.useEffect(() => {
-        setFilteredCountries(countryList)
+        setFilteredCountries(countryList.data)
     }, [countryList])
+    console.log('------------', { filteredCountries, countryList })
 
-    //filter country by keyword
-    // React.useEffect(() => {
-    //     const _tempCountries= countryList.filter((country:any) => country.name.toLowerCase().includes(searchKeyword.toLowerCase()))
-    //     setFilteredCountries(_tempCountries)
-    // }, [countryList, searchKeyword])
+    // filter country by keyword
+    React.useEffect(() => {
+        const _tempCountries: any = countryList.data.filter((country: any) => country.name.toLowerCase().includes(searchKeyword.toLowerCase()))
+        setFilteredCountries(_tempCountries)
+    }, [countryList, searchKeyword])
 
-    const handleSearchKeyword = (value: string) => {
+
+    const handleSearchKeyword = ({ target: { value } }: any) => {
         setSearchKeyword(value)
     }
+    console.log(`filteredCountries`, filteredCountries)
 
     const dispatch = useDispatch()
     //dispatch fetcchallcountries when page load
     React.useEffect(() => {
         dispatch(fetchAllCountries())
     }, [])
+
+    const getRegion = (region: string) => {
+        const countries: [] = countryList.data.filter((country: any) => country.region === region) as []
+        setFilteredCountries(countries)
+    }
 
 
 
@@ -66,12 +73,12 @@ export default function Home() {
                                             <line x1={21} y1={21} x2={15} y2={15} />
                                         </svg>
                                     </div>
-                                    <input className=" border-gray-400 w-80 focus:outline-none rounded  text-sm text-gray-500 bg-white pl-10 py-1.5" type="text" placeholder="Search For a Country..." />
+                                    <input className=" border-gray-400 w-80 focus:outline-none rounded  text-sm text-gray-500 bg-white pl-10 py-1.5" type="text" placeholder="Search For a Country..." onChange={handleSearchKeyword} />
                                 </div>
                             </div>
                             <div className="w-1/2 h-full hidden lg:flex items-center -mt-8">
 
-                                <FilterRegion />
+                                <FilterRegion getRegion={getRegion} />
 
                             </div>
                         </div>
@@ -79,9 +86,16 @@ export default function Home() {
                         <div className=" mx-20 py-10 h-64  w-full  flex flex-wrap">
 
                             {countryList.loading && <div><Loader /></div>}
-                            {filteredCountries.data?.map((country: any) => (
+                            {filteredCountries?.map((country: any) => (
                                 <CountryCard {...country} onClick={() => dispatch(addCountryToBuz(country))} searchKeyword={searchKeyword} />
                             ))}
+                            {filteredCountries.length === 0 && (
+                                <div className="w-400 m-auto ">
+                                    <p className="bold text-2xl text-gray-400 w-30 m-auto">Oups! <br></br>No country found...</p>
+                                    <img src={EmptyImg} width={400} />
+                                </div>
+                                
+                            )}
 
                         </div>
                     </div>

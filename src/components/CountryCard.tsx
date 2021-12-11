@@ -57,7 +57,7 @@ export default function CountryCard({ flag, name, region, population, capital, c
                 <CardMedia
                     component="img"
                     alt={name}
-                    height="100"
+                    height="200px"
                     src={flag}
                     title="CountryPicture"
                     style={{ fontSize: 16, color: 'lightslategrey', fontFamily: 'poppins, sans-serif' }}
